@@ -43,10 +43,10 @@ class GetProducts extends GenericRequest
      * @param null|bool $globalIdentifier
      */
     public function __construct(
-        \DateTimeInterface $createdAfter = null,
-        \DateTimeInterface $createdBefore = null,
-        \DateTimeInterface $updatedAfter = null,
-        \DateTimeInterface $updatedBefore = null,
+        ?\DateTimeInterface $createdAfter = null,
+        ?\DateTimeInterface $createdBefore = null,
+        ?\DateTimeInterface $updatedAfter = null,
+        ?\DateTimeInterface $updatedBefore = null,
         $search = null,
         $filter = null,
         $limit = null,
