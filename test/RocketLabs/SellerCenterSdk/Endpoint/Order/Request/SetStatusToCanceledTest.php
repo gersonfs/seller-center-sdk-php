@@ -25,14 +25,14 @@ class SetStatusToCanceledTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($expectedArray, (new SetStatusToCanceled($id, $reason, $reasonDetail))->toArray());
     }
 
-    public function providerToArray()
+    public static function providerToArray()
     {
         return [
             [
-                'id' => 10,
-                'reason' => 'reason',
-                'details' => 'reason details',
-                'expected array' => [
+                10,
+                'reason',
+                'reason details',
+                [
                     'Action' => 'SetStatusToCanceled',
                     'Format' => 'JSON',
                     'Version' => '1.0',

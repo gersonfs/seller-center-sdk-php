@@ -33,14 +33,14 @@ class ProductCreateCollectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function buildProvider()
+    public static function buildProvider()
     {
 
         $now = new \DateTimeImmutable('now');
 
         return [
             'with two products' => [
-                'product' => [
+                [
                     [
                         Product::SELLER_SKU => '41053821e4',
                         Product::NAME => 'New Product',
@@ -81,7 +81,7 @@ class ProductCreateCollectionTest extends \PHPUnit\Framework\TestCase
                         ],
                     ],
                 ],
-                'request' => new ProductCreateRequest(
+                new ProductCreateRequest(
                     [
                         'Product' => [
                             [

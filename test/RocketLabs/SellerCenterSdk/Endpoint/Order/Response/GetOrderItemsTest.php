@@ -34,11 +34,11 @@ class GetOrderItemsTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data with 2+ items' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => [
                         'OrderItems' => [
@@ -111,7 +111,7 @@ class GetOrderItemsTest extends \PHPUnit\Framework\TestCase
                 ]
             ],
             'valid data with 1 item' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => [
                         'OrderItems' => [

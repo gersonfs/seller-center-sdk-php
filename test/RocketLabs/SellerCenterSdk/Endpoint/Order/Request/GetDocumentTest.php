@@ -33,18 +33,18 @@ class GetDocumentTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function toArrayDataProvider()
+    public static function toArrayDataProvider()
     {
         return [
             'single test' => [
-                'expected' => [
+                [
                     'OrderItemIds' => '[1,2,3]',
                     'Version' => '1.0',
                     'Action' => 'GetDocument',
                     'Format' => 'JSON',
                     'DocumentType' => 'hello you !',
                 ],
-                'data' => [
+                [
                     'OrderItemIds' => [1,2,3],
                     'Version' => '1.0',
                     'Action' => 'GetDocument',

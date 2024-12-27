@@ -132,7 +132,7 @@ class ArrayCollection implements CollectionInterface
      *
      * {@inheritDoc}
      */
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return $this->containsKey($offset);
     }
@@ -142,7 +142,7 @@ class ArrayCollection implements CollectionInterface
      *
      * {@inheritDoc}
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->get($offset);
     }
@@ -152,7 +152,7 @@ class ArrayCollection implements CollectionInterface
      *
      * {@inheritDoc}
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         if (!isset($offset)) {
             $this->add($value);
@@ -166,9 +166,9 @@ class ArrayCollection implements CollectionInterface
      *
      * {@inheritDoc}
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
-        return $this->remove($offset);
+        $this->remove($offset);
     }
 
     /**
@@ -222,7 +222,7 @@ class ArrayCollection implements CollectionInterface
     /**
      * {@inheritDoc}
      */
-    public function count()
+    public function count(): int
     {
         return count($this->elements);
     }
@@ -258,7 +258,7 @@ class ArrayCollection implements CollectionInterface
      *
      * {@inheritDoc}
      */
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new ArrayIterator($this->elements);
     }

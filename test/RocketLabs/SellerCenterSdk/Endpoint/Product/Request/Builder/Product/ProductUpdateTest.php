@@ -19,7 +19,7 @@ class ProductUpdateTest extends \PHPUnit\Framework\TestCase
      */
     public function testConstructorWithInvalidSellerSku($sellerSku)
     {
-        $this->setExpectedException(RequiredFieldValue::class);
+        $this->expectException(RequiredFieldValue::class);
 
         new ProductUpdateBuilder($sellerSku);
     }
@@ -44,7 +44,7 @@ class ProductUpdateTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function constructorWithInvalidSellerSkuProvider()
+    public static function constructorWithInvalidSellerSkuProvider()
     {
         return [
             [''],
@@ -59,21 +59,21 @@ class ProductUpdateTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function buildProvider()
+    public static function buildProvider()
     {
 
         $now = new \DateTimeImmutable('now');
 
         return [
             'update a product price' => [
-                'sellerSku' => '41053821e4',
-                'product' => [
+                '41053821e4',
+                [
                     Product::PRICE => 40.00,
                     Product::SALE_PRICE => 37,
                     Product::SALE_START_DATE => $now,
                     Product::SALE_END_DATE => $now->modify('+5 day')
                 ],
-                'request' => new ProductUpdateRequest(
+                new ProductUpdateRequest(
                     [
                         Product::SELLER_SKU => '41053821e4',
                         Product::PRICE => 40.00,

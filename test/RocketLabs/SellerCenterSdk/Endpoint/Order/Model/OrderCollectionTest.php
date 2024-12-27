@@ -24,11 +24,11 @@ class OrderCollectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data' => [
-                'data' => [
+                [
                     new Order(
                         [
                             Order::ORDER_ID => 89,
@@ -148,7 +148,7 @@ class OrderCollectionTest extends \PHPUnit\Framework\TestCase
                         ]
                     )
                 ],
-                'id' => 89
+                89
             ],
         ];
     }

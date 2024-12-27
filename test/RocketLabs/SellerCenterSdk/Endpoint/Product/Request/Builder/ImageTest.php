@@ -29,15 +29,15 @@ class ImageTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function providerBuild()
+    public static function providerBuild()
     {
         return [
             'with couple of images' => [
-                'methods' => [
+                [
                     ['addImage', ['http://images.com/img1.jpg']],
                     ['addImage', ['http://images.com/img2.jpg']],
                 ],
-                'request' => new ImageRequest(
+                new ImageRequest(
                     self::SKU,
                     ['http://images.com/img1.jpg', 'http://images.com/img2.jpg']
                 ),

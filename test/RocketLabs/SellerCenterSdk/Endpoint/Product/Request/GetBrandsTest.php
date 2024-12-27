@@ -35,11 +35,11 @@ class GetBrandsTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function toArrayDataProvider()
+    public static function toArrayDataProvider()
     {
         return [
             'single test' => [
-                'expected' => [
+                [
                     'Version' => '1.0',
                     'Action' => 'GetBrands',
                     'Format' => 'JSON',

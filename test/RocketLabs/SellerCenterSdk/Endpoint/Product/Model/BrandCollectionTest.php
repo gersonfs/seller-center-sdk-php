@@ -27,11 +27,11 @@ class BrandCollectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data' => [
-                'data' => [
+                [
                     new Brand(
                         [
                             Brand::ID_KEY => 82,
@@ -47,7 +47,7 @@ class BrandCollectionTest extends \PHPUnit\Framework\TestCase
                         ]
                     ),
                 ],
-                'firstId' => 82
+                82
             ]
         ];
     }

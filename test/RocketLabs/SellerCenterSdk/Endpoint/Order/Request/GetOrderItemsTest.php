@@ -31,17 +31,17 @@ class GetOrderItemsTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(Response::class, $request->getResponseClassName());
     }
 
-    public function toArrayDataProvider()
+    public static function toArrayDataProvider()
     {
         return [
             'single test' => [
-                'expected' => [
+                [
                     'OrderId' => '4',
                     'Version' => '1.0',
                     'Action' => 'GetOrderItems',
                     'Format' => 'JSON',
                 ],
-                'data' => [
+                [
                     'OrderId' => 4
                 ]
             ]

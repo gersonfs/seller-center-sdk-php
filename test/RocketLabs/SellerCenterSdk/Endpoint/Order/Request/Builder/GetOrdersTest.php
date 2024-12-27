@@ -27,14 +27,14 @@ class GetOrdersTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function providerBuild()
+    public static function providerBuild()
     {
         return [
             'only sorting' => [
-                'methods' => [
+                [
                     ['setSorting', ['updated_at', 'ASC']],
                 ],
-                'request' => new GetOrdersRequest(
+                new GetOrdersRequest(
                     null,
                     null,
                     null,
@@ -47,11 +47,11 @@ class GetOrdersTest extends \PHPUnit\Framework\TestCase
                 ),
             ],
             'limit and offset' => [
-                'methods' => [
+                [
                     ['setLimit', [100]],
                     ['setOffset', [300]],
                 ],
-                'request' => new GetOrdersRequest(
+                new GetOrdersRequest(
                     null,
                     null,
                     null,
@@ -62,14 +62,14 @@ class GetOrdersTest extends \PHPUnit\Framework\TestCase
                 ),
             ],
             'filters' => [
-                'methods' => [
+                [
                     ['setStatus', ['delivered']],
                     ['setCreatedAfter', [new \DateTime('2016-04-01')]],
                     ['setCreatedBefore', [new \DateTime('2016-05-01')]],
                     ['setUpdatedAfter', [new \DateTime('2016-05-01')]],
                     ['setUpdatedBefore', [new \DateTime('2016-06-01')]],
                 ],
-                'request' => new GetOrdersRequest(
+                new GetOrdersRequest(
                     new \DateTime('2016-04-01'),
                     new \DateTime('2016-05-01'),
                     new \DateTime('2016-05-01'),
@@ -89,8 +89,10 @@ class GetOrdersTest extends \PHPUnit\Framework\TestCase
     public function testSetSorting($sortBy, $sortDirection, $exceptionExpected)
     {
         if ($exceptionExpected) {
-            $this->setExpectedException($exceptionExpected);
-        }
+            $this->expectException($exceptionExpected);
+        } else {
+			$this->assertTrue(true);
+		}
 
         (new GetOrders())->setSorting($sortBy, $sortDirection);
     }
@@ -98,7 +100,7 @@ class GetOrdersTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function providerSetSorting()
+    public static function providerSetSorting()
     {
         return [
             'valid both values' => [
@@ -127,8 +129,10 @@ class GetOrdersTest extends \PHPUnit\Framework\TestCase
     public function testSetStatus($status, $exceptionExpected)
     {
         if ($exceptionExpected) {
-            $this->setExpectedException($exceptionExpected);
-        }
+            $this->expectException($exceptionExpected);
+        } else {
+			$this->assertTrue(true);
+		}
 
         (new GetOrders())->setStatus($status);
     }
@@ -136,7 +140,7 @@ class GetOrdersTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function providerSetStatus()
+    public static function providerSetStatus()
     {
         return [
             'valid value' => [

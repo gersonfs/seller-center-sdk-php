@@ -29,11 +29,11 @@ class BrandTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             [
-                'data' => [
+                [
                     Brand::ID_KEY => 82,
                     Brand::NAME_KEY => 'LaLa',
                     Brand::GLOBAL_IDENTIFIER_KEY => '123G1',

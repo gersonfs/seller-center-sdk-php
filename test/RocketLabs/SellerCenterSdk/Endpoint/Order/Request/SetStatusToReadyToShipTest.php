@@ -32,15 +32,15 @@ class SetStatusToReadyToShipTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function providerToArray()
+    public static function providerToArray()
     {
         return [
             [
-                'ids' => [10,11],
-                'delivery' => 'dropship',
-                'provider' => 'DHL',
-                'tracking' => 'D4263456346345',
-                'expected array' => [
+                [10,11],
+                'dropship',
+                'DHL',
+                'D4263456346345',
+                [
                     'Action' => 'SetStatusToReadyToShip',
                     'Format' => 'JSON',
                     'Version' => '1.0',

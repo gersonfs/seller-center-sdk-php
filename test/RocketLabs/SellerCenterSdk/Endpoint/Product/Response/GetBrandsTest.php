@@ -27,7 +27,7 @@ class GetBrandsTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             'valid data with 2+ brands' => [

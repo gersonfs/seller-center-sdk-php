@@ -30,7 +30,7 @@ class GetOrdersTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function providerToArray()
+    public static function providerToArray()
     {
         return [
             [

@@ -37,11 +37,11 @@ class AddressTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             [
-                'data' => [
+                [
                     Address::FIRST_NAME => 'Sheldon',
                     Address::LAST_NAME => 'Cooper',
                     Address::PHONE => '123456',

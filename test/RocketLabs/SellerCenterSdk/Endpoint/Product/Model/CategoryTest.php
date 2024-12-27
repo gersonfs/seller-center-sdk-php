@@ -9,7 +9,7 @@ class CategoryTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
-     * @dataProvider testConstructorProvider
+     * @dataProvider constructorProvider
      *
      * @param array $category
      * @param array $expected
@@ -32,7 +32,7 @@ class CategoryTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function testConstructorProvider()
+    public static function constructorProvider()
     {
         return [
             'category with children' => [

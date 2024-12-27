@@ -31,11 +31,11 @@ class GetOrderTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data with 1 order' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => [
                         GetOrders::ORDERS_KEY => [

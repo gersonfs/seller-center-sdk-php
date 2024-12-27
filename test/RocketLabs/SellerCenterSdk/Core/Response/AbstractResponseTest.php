@@ -9,12 +9,11 @@ class AbstractResponseTest extends \PHPUnit\Framework\TestCase
      * @param array $responseData
      * @param array $expectedHead
      * @param array $expectedBody
-     * @dataProvider providerConstructor
+     * @dataProvider providerConstructor()
      */
     public function testConstructor(array $responseData, array $expectedHead, array $expectedBody)
     {
-        /** @var AbstractResponse $response */
-        $response = $this->getMock(AbstractResponse::class, null, [$responseData]);
+        $response = new AbstractResponse($responseData);
 
         $this->assertEquals($expectedHead, $response->getHead());
         $this->assertEquals($expectedBody, $response->getBody());
@@ -23,11 +22,11 @@ class AbstractResponseTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function providerConstructor()
+    public static function providerConstructor()
     {
         return [
             'complete response' => [
-                'response' => [
+                [
                     'Head' => [
                         'Action' => 'DoSomething',
                         'RequestId' => '000-000-r0003-frrw43'
@@ -36,38 +35,38 @@ class AbstractResponseTest extends \PHPUnit\Framework\TestCase
                         'SomeData' => 'value'
                     ]
                 ],
-                'head' => [
+                [
                     'Action' => 'DoSomething',
                     'RequestId' => '000-000-r0003-frrw43'
                 ],
-                'body' => ['SomeData' => 'value']
+                ['SomeData' => 'value']
             ],
             'response without body' => [
-                'response' => [
+                [
                     'Head' => [
                         'Action' => 'DoSomething',
                         'RequestId' => '000-000-r0003-frrw43'
                     ]
                 ],
-                'head' => [
+                [
                     'Action' => 'DoSomething',
                     'RequestId' => '000-000-r0003-frrw43'
                 ],
-                'body' => []
+                []
             ],
             'response without head' => [
-                'response' => [
+                [
                     'Body' => [
                         'SomeData' => 'value'
                     ]
                 ],
-                'head' => [],
-                'body' => ['SomeData' => 'value']
+                [],
+                ['SomeData' => 'value']
             ],
             'empty response' => [
-                'response' => [],
-                'head' => [],
-                'body' => []
+                [],
+                [],
+                []
             ],
         ];
     }

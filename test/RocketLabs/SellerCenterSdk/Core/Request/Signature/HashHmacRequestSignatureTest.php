@@ -24,7 +24,7 @@ class HashHmacRequestSignatureTest extends TestCase
     /**
      * @return array
      */
-    public function signDataProvider()
+    public static function signDataProvider()
     {
         $salt = '67c7ef5fa5d408aed1';
         return [
@@ -59,7 +59,8 @@ class HashHmacRequestSignatureTest extends TestCase
      */
     public function testSignException($algorithm, $salt, $subject, $expectedMessage)
     {
-        $this->setExpectedException(\InvalidArgumentException::class, $expectedMessage);
+        $this->expectException(\InvalidArgumentException::class);
+		$this->expectExceptionMessage($expectedMessage);
         $signature = new HashHmacRequestSignature($algorithm, $salt);
         $signature->sign($subject);
     }
@@ -67,7 +68,7 @@ class HashHmacRequestSignatureTest extends TestCase
     /**
      * @return array
      */
-    public function signExceptionDataProvider()
+    public static function signExceptionDataProvider()
     {
         $salt = 'c903dc9e03b10fcd61';
         return [

@@ -31,14 +31,14 @@ class SetStatusToPackedByMarketplaceTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    public function providerToArray()
+    public static function providerToArray()
     {
         return [
             [
-                'ids' => [10, 11],
-                'delivery' => 'dropship',
-                'provider' => 'DHL',
-                'expected array' => [
+                [10, 11],
+                'dropship',
+                'DHL',
+                [
                     'Action' => 'SetStatusToPackedByMarketplace',
                     'Format' => 'JSON',
                     'Version' => '1.0',

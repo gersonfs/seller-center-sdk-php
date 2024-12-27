@@ -40,7 +40,7 @@ class ProductCollectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function iteratorProvider()
+    public static function iteratorProvider()
     {
 
         $now = new \DateTimeImmutable('now');
@@ -99,14 +99,14 @@ class ProductCollectionTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function constructorProvider()
+    public static function constructorProvider()
     {
 
         $now = new \DateTimeImmutable('now');
 
         return [
             'valid data' => [
-                'data' => [
+                [
                     new Product(
                         [
                             Product::SELLER_SKU => '41053821e4',

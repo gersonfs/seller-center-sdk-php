@@ -4,6 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Core\Response;
 
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
+use RocketLabs\SellerCenterSdk\Core\Exception\ApiException;
 
 class FactoryTest extends \PHPUnit\Framework\TestCase
 {
@@ -29,22 +30,22 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @param HttpResponseInterface $response
-     * @expectedException \RocketLabs\SellerCenterSdk\Core\Exception\ApiException
      * @dataProvider providerBuildResponseForNonSuccessfulRequest
      */
     public function testBuildResponseForNonSuccessfulRequest(HttpResponseInterface $response)
     {
+		$this->expectException(ApiException::class);
         (new Factory())->buildResponse($response);
     }
 
     /**
      * @return array
      */
-    public function providerBuildResponse()
+    public static function providerBuildResponse()
     {
         return [
             'error response' => [
-                'response' => new Response(
+                new Response(
                     200,
                     [],
                     json_encode([
@@ -56,12 +57,12 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
                         ]
                     ])
                 ),
-                'class' => ErrorResponse::class,
-                'body' => [],
-                'head' => ['ErrorMessage' => 'Error 00'],
+                ErrorResponse::class,
+                [],
+                ['ErrorMessage' => 'Error 00'],
             ],
             'generic response' => [
-                'response' => new Response(
+                new Response(
                     200,
                     [],
                     json_encode([
@@ -76,11 +77,11 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
                         ]
                     ])
                 ),
-                'class' => GenericResponse::class,
-                'body' => [
+                GenericResponse::class,
+                [
                     'SomeData' => 'value'
                 ],
-                'head' => [
+                [
                     'Action' => 'DoSomething',
                     'RequestId' => '000-000-r0003-frrw43'
                 ],
@@ -91,7 +92,7 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function providerBuildResponseForNonSuccessfulRequest()
+    public static function providerBuildResponseForNonSuccessfulRequest()
     {
         return [
             'redirect response' => [

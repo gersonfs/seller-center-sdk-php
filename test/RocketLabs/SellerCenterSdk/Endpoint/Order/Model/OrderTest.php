@@ -44,11 +44,11 @@ class OrderTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             [
-                'data' => [
+                [
                     Order::ORDER_ID => 89,
                     Order::CUSTOMER_FIRST_NAME => 'John',
                     Order::CUSTOMER_LAST_NAME => 'Doe',
@@ -106,7 +106,7 @@ class OrderTest extends \PHPUnit\Framework\TestCase
                         ]
                     ],
                 ],
-                'expected' => [
+                [
                     Order::ORDER_ID => 89,
                     Order::CUSTOMER_FIRST_NAME => 'John',
                     Order::CUSTOMER_LAST_NAME => 'Doe',
