@@ -67,7 +67,7 @@ class Configuration
      */
     protected function validateUrl($url)
     {
-        $filteredUrl = filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED | FILTER_FLAG_SCHEME_REQUIRED);
+        $filteredUrl = filter_var($url, FILTER_VALIDATE_URL, FILTER_VALIDATE_URL);
 
         if (false === $filteredUrl) {
             throw new \InvalidArgumentException(

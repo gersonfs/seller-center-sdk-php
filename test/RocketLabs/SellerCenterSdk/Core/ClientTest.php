@@ -23,7 +23,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
     /**
      * @param RequestInterface $request
      * @param HttpRequestInterface $expectedHttpRequest
-     * @dataProvider providerCall
+     * @dataProvider providerCall()
      */
     public function testCall(RequestInterface $request, HttpRequestInterface $expectedHttpRequest)
     {
@@ -35,11 +35,11 @@ class ClientTest extends \PHPUnit\Framework\TestCase
     /**
      * @return array
      */
-    public function providerCall()
+    public static function providerCall()
     {
         return [
             'getter' => [
-                'apiRequest' => new GenericRequest(
+                new GenericRequest(
                     Client::GET,
                     'SomeAction',
                     RequestInterface::V1,
@@ -47,7 +47,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
                         'Param' => 'value'
                     ]
                 ),
-                'expectedHttpRequest' => new Request(
+                new Request(
                     Client::GET,
                     self::URL . '?Action=SomeAction&Format=JSON&Version=1.0&Param=value&UserID='
                     . urlencode(self::USER) . '&Timestamp='. urlencode(self::TIMESTAMP)
@@ -56,7 +56,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
                 )
             ],
             'getter with body' => [
-                'apiRequest' => new GenericRequest(
+                new GenericRequest(
                     Client::GET,
                     'SomeAction',
                     RequestInterface::V1,
@@ -70,7 +70,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
                         ]
                     ]
                 ),
-                'expectedHttpRequest' => new Request(
+                new Request(
                     Client::GET,
                     self::URL . '?Action=SomeAction&Format=JSON&Version=1.0&Param=value&UserID='
                     . urlencode(self::USER) . '&Timestamp='. urlencode(self::TIMESTAMP) .'&Signature=' . self::SIGN,
@@ -78,7 +78,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
                 )
             ],
             'post-request' => [
-                'apiRequest' => new GenericRequest(
+                new GenericRequest(
                     Client::POST,
                     'DoSomeAction',
                     RequestInterface::V2,
@@ -92,16 +92,16 @@ class ClientTest extends \PHPUnit\Framework\TestCase
                         ]
                     ]
                 ),
-                'expectedHttpRequest' => new Request(
+                new Request(
                     Client::POST,
                     self::URL . '?Action=DoSomeAction&Format=JSON&Version=2.0&Param=value&UserID='
                     . urlencode(self::USER) . '&Timestamp='. urlencode(self::TIMESTAMP) .'&Signature=' . self::SIGN,
                     ['Accept: application/json'],
-                    $this->getBodyStream()
+                    self::getBodyStream()
                 )
             ],
             'post-request without body' => [
-                'apiRequest' => new GenericRequest(
+                new GenericRequest(
                     Client::POST,
                     'DoSomeAction',
                     RequestInterface::V2,
@@ -109,7 +109,7 @@ class ClientTest extends \PHPUnit\Framework\TestCase
                         'Param' => 'value'
                     ]
                 ),
-                'expectedHttpRequest' => new Request(
+                new Request(
                     Client::POST,
                     self::URL . '?Action=DoSomeAction&Format=JSON&Version=2.0&Param=value&UserID='
                     . urlencode(self::USER) . '&Timestamp='. urlencode(self::TIMESTAMP) .'&Signature=' . self::SIGN,
@@ -125,28 +125,24 @@ class ClientTest extends \PHPUnit\Framework\TestCase
      */
     protected function getClientWithMocks(HttpRequestInterface $httpRequest)
     {
-        /** @var \PHPUnit_Framework_MockObject_MockObject|RequestSignatureProviderInterface $signerMock */
-        $signerMock = $this->getMock(RequestSignatureProviderInterface::class);
+		
+        $signerMock = $this->getMockBuilder(RequestSignatureProviderInterface::class)->getMock();
         $signerMock->method('sign')->willReturn(self::SIGN);
 
-        /** @var \PHPUnit_Framework_MockObject_MockObject|OutputFormatAdapterInterface $formatterMock */
-        $formatterMock = $this->getMock(OutputFormatAdapterInterface::class);
-        $formatterMock->method('convertToOutputFormat')->willReturn($this->getBodyStream());
+        $formatterMock = $this->getMockBuilder(OutputFormatAdapterInterface::class)->getMock();
+        $formatterMock->method('convertToOutputFormat')->willReturn(self::getBodyStream());
 
-        /** @var \PHPUnit_Framework_MockObject_MockObject|TimestampFormatterInterface $timestampMock */
-        $timestampMock = $this->getMock(TimestampFormatterInterface::class);
+        $timestampMock = $this->getMockBuilder(TimestampFormatterInterface::class)->getMock();
         $timestampMock->method('getFormattedTimestamp')->willReturn(self::TIMESTAMP);
 
-        /** @var \PHPUnit_Framework_MockObject_MockObject|Http\ClientInterface $httpMock */
-        $httpMock = $this->getMock(Http\ClientInterface::class);
+        $httpMock = $this->getMockBuilder(Http\ClientInterface::class)->getMock();
         $httpMock
             ->expects($this->once())
             ->method('send')
             ->with($httpRequest)
             ->willReturn(new Response());
 
-        /** @var \PHPUnit_Framework_MockObject_MockObject|Factory $factoryMock */
-        $factoryMock = $this->getMock(Factory::class);
+        $factoryMock = $this->getMockBuilder(Factory::class)->getMock();
         $factoryMock->expects($this->once())->method('buildResponse');
 
         return new Client(
@@ -162,12 +158,12 @@ class ClientTest extends \PHPUnit\Framework\TestCase
     /**
      * @return mixed
      */
-    protected function getBodyStream()
+    protected static function getBodyStream()
     {
         static $bodyStream;
 
         if (empty($bodyStream)) {
-            $bodyStream = \GuzzleHttp\Psr7\stream_for('<xml><d ok="true" /></xml>');
+            $bodyStream = \GuzzleHttp\Psr7\Utils::streamFor('<xml><d ok="true" /></xml>');
         }
 
         return $bodyStream;
