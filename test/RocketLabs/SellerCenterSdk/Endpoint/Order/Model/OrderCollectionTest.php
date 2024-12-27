@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Model;
 
-class OrderCollectionTest extends \PHPUnit_Framework_TestCase
+class OrderCollectionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider provider
@@ -24,11 +24,11 @@ class OrderCollectionTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data' => [
-                'data' => [
+                [
                     new Order(
                         [
                             Order::ORDER_ID => 89,
@@ -148,7 +148,7 @@ class OrderCollectionTest extends \PHPUnit_Framework_TestCase
                         ]
                     )
                 ],
-                'id' => 89
+                89
             ],
         ];
     }

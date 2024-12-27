@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Core\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 
-class GenericRequestTest extends \PHPUnit_Framework_TestCase
+class GenericRequestTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param GenericRequest $request
@@ -20,7 +20,7 @@ class GenericRequestTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function toArrayDataProvider()
+    public static function toArrayDataProvider()
     {
         return [
             'get' => [
@@ -80,19 +80,19 @@ class GenericRequestTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($method, $request->getMethod());
         $this->assertEquals($action, $request->getAction());
         $this->assertEquals($version, $request->getVersion());
-        $this->assertArraySubset($query, $request->toArray());
+        $this->assertEquals($query['param'], $request->toArray()['param']);
         $this->assertEquals($body, $request->getBodyData());
     }
 
-    public function providerConstructor()
+    public static function providerConstructor()
     {
         return [
             [
-                'method' => Client::POST,
-                'action' => 'ProductCreate',
-                'version' => GenericRequest::V1,
-                'query' => ['param' => 'value'],
-                'body' => [
+                Client::POST,
+                'ProductCreate',
+                GenericRequest::V1,
+                ['param' => 'value'],
+                [
                     'Product' => [
                         'Brand' => 'Name',
                         'Description' => 'test product description',

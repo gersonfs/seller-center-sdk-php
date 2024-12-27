@@ -25,7 +25,7 @@ class XmlOutputFormatAdapter implements OutputFormatAdapterInterface
     protected function addToNode(
         $content,
         \SimpleXMLElement $node,
-        \SimpleXMLElement $parentNode = null
+        ?\SimpleXMLElement $parentNode = null
     ) {
         if (is_array($content)) {
             foreach ($content as $argument => $value) {

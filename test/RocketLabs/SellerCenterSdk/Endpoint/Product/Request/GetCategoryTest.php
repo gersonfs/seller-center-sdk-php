@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetCategoryTree as GetC
 /**
  * Class GetCategoryTest
  */
-class GetCategoryTest extends \PHPUnit_Framework_TestCase
+class GetCategoryTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testClassName()

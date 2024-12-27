@@ -2,6 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint;
 
+use PHPUnit\Framework\TestCase;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Image;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductCreateCollection;
@@ -13,7 +14,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetCategoryTree;
 /**
  * Class ProductTest
  */
-class ProductTest extends \PHPUnit_Framework_TestCase
+class ProductTest extends TestCase
 {
     public function testGetBrands()
     {

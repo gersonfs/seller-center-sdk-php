@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\CategoryCollection;
 /**
  * Class GetCategoryTreeTest
  */
-class GetCategoryTreeTest extends \PHPUnit_Framework_TestCase
+class GetCategoryTreeTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -27,12 +27,12 @@ class GetCategoryTreeTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             'valid data with 2+ categories' => [
-                'count' => 2,
-                'data' => [
+                2,
+                [
                     'Head' => [],
                     'Body' => [
                         'Categories' => [
@@ -53,8 +53,8 @@ class GetCategoryTreeTest extends \PHPUnit_Framework_TestCase
                 ]
             ],
             'valid data with 1 category' => [
-                'count' => 1,
-                'data' => [
+                1,
+                [
                     'Head' => [],
                     'Body' => [
                         'Categories' => [
@@ -70,8 +70,8 @@ class GetCategoryTreeTest extends \PHPUnit_Framework_TestCase
                 ]
             ],
             'empty brand' => [
-                'count' => 0,
-                'data' => [
+                0,
+                [
                     'Head' => [],
                     'Body' => []
                 ]

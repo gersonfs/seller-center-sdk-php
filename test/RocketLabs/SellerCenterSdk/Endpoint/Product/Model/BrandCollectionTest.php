@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 /**
  * Class BrandCollectionTest
  */
-class BrandCollectionTest extends \PHPUnit_Framework_TestCase
+class BrandCollectionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider provider
@@ -27,11 +27,11 @@ class BrandCollectionTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data' => [
-                'data' => [
+                [
                     new Brand(
                         [
                             Brand::ID_KEY => 82,
@@ -47,7 +47,7 @@ class BrandCollectionTest extends \PHPUnit_Framework_TestCase
                         ]
                     ),
                 ],
-                'firstId' => 82
+                82
             ]
         ];
     }

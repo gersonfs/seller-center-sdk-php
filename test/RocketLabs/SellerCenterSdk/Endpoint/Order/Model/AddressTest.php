@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Model;
 
-class AddressTest extends \PHPUnit_Framework_TestCase
+class AddressTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param array $data
@@ -37,11 +37,11 @@ class AddressTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             [
-                'data' => [
+                [
                     Address::FIRST_NAME => 'Sheldon',
                     Address::LAST_NAME => 'Cooper',
                     Address::PHONE => '123456',

@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Image as ImageRequest;
 /**
  * Class ImageTest
  */
-class ImageTest extends \PHPUnit_Framework_TestCase
+class ImageTest extends \PHPUnit\Framework\TestCase
 {
     const SKU = 'SellerSKU';
 
@@ -29,15 +29,15 @@ class ImageTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function providerBuild()
+    public static function providerBuild()
     {
         return [
             'with couple of images' => [
-                'methods' => [
+                [
                     ['addImage', ['http://images.com/img1.jpg']],
                     ['addImage', ['http://images.com/img2.jpg']],
                 ],
-                'request' => new ImageRequest(
+                new ImageRequest(
                     self::SKU,
                     ['http://images.com/img1.jpg', 'http://images.com/img2.jpg']
                 ),

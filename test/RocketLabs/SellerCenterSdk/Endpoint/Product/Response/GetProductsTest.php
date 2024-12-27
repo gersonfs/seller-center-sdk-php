@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\ProductCollection;
 /**
  * Class GetProductsTest
  */
-class GetProductsTest extends \PHPUnit_Framework_TestCase
+class GetProductsTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -27,7 +27,7 @@ class GetProductsTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             'valid data with 2+ products' => [

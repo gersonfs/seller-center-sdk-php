@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 /**
  * Class ProductTest
  */
-class ProductTest extends \PHPUnit_Framework_TestCase
+class ProductTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -49,14 +49,14 @@ class ProductTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
 
         $now = new \DateTime('now');
 
         return [
             [
-                'data' => [
+                [
                     Product::SHOP_SKU => '41053821ret',
                     Product::SELLER_SKU => '41053821e4',
                     Product::NAME => 'New Product',

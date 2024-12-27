@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Model;
 
-class StatusCollectionTest extends \PHPUnit_Framework_TestCase
+class StatusCollectionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider provider
@@ -13,7 +13,7 @@ class StatusCollectionTest extends \PHPUnit_Framework_TestCase
         $collection = $this->buildCollection($data);
 
         foreach ($collection as $status) {
-            $this->assertInternalType('string', $status);
+            $this->assertIsString($status);
         }
 
         $collection->rewind();
@@ -23,7 +23,7 @@ class StatusCollectionTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data' => [

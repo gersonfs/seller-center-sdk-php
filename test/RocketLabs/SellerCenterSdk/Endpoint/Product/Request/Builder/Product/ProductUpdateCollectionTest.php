@@ -9,7 +9,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductU
 /**
  * Class ProductUpdateCollectionTest
  */
-class ProductUpdateCollectionTest extends \PHPUnit_Framework_TestCase
+class ProductUpdateCollectionTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -34,14 +34,14 @@ class ProductUpdateCollectionTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function buildProvider()
+    public static function buildProvider()
     {
 
         $now = new \DateTimeImmutable('now');
 
         return [
             'with two products' => [
-                'product' => [
+                [
                     [
                         'sellerSku' => '41053821e4',
                         'values' => [
@@ -58,7 +58,7 @@ class ProductUpdateCollectionTest extends \PHPUnit_Framework_TestCase
                         ],
                     ]
                 ],
-                'request' => new ProductUpdateRequest(
+                new ProductUpdateRequest(
                     [
                         'Product' => [
                             [

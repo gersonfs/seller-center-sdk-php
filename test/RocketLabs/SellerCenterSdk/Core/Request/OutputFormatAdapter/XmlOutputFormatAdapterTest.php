@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Core\Request\OutputFormatAdapter;
 /**
  * Class XmlOutputFormatAdapterTest
  */
-final class XmlOutputFormatAdapterTest extends \PHPUnit_Framework_TestCase
+final class XmlOutputFormatAdapterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -26,11 +26,11 @@ final class XmlOutputFormatAdapterTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function convertToOutputFormatDataProvider()
+    public static function convertToOutputFormatDataProvider()
     {
         return [
             'multiple complex options' => [
-                '$data' => [
+                [
                     'Attribute' => [
                         'Label' => 'Battery Type',
                         'Name' => 'type_of_battery',
@@ -60,10 +60,10 @@ final class XmlOutputFormatAdapterTest extends \PHPUnit_Framework_TestCase
                         ],
                     ],
                 ],
-                '$expectedResult' => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Request><Attribute><Label>Battery Type</Label><Name>type_of_battery</Name><isMandatory/><Description>Type of battery use</Description><AttributeType>option</AttributeType><ExampleValue/><Options><Option><Name>AA Alkaline Batteries</Name><isDefault>0</isDefault></Option><Option><Name>Li-ions Rechargeable Battery</Name><isDefault>0</isDefault></Option><Option><Name>Build in battery</Name><isDefault>0</isDefault></Option><Option><Name>No battery</Name><isDefault>0</isDefault></Option></Options></Attribute></Request>\n",
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Request><Attribute><Label>Battery Type</Label><Name>type_of_battery</Name><isMandatory/><Description>Type of battery use</Description><AttributeType>option</AttributeType><ExampleValue/><Options><Option><Name>AA Alkaline Batteries</Name><isDefault>0</isDefault></Option><Option><Name>Li-ions Rechargeable Battery</Name><isDefault>0</isDefault></Option><Option><Name>Build in battery</Name><isDefault>0</isDefault></Option><Option><Name>No battery</Name><isDefault>0</isDefault></Option></Options></Attribute></Request>\n",
             ],
             'multiple simple options' => [
-                '$data' => [
+                [
                     'ProductImage' => [
                         'SellerSku' => 'SKU',
                         'Images' => [
@@ -75,10 +75,10 @@ final class XmlOutputFormatAdapterTest extends \PHPUnit_Framework_TestCase
                         ],
                     ],
                 ],
-                '$expectedResult' => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Request><ProductImage><SellerSku>SKU</SellerSku><Images><Image>url_1?value=1&amp;value=2</Image><Image>url_2</Image><Image>url_3</Image></Images></ProductImage></Request>\n",
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Request><ProductImage><SellerSku>SKU</SellerSku><Images><Image>url_1?value=1&amp;value=2</Image><Image>url_2</Image><Image>url_3</Image></Images></ProductImage></Request>\n",
             ],
             'real request body example' => [
-                '$data' => [
+                [
                     'Product' => [
                         [
                             'SellerSku' => '4105382173aaee4',
@@ -91,7 +91,7 @@ final class XmlOutputFormatAdapterTest extends \PHPUnit_Framework_TestCase
                         ]
                     ],
                 ],
-                '$expectedResult' => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Request><Product><SellerSku>4105382173aaee4</SellerSku><Price>12</Price></Product><Product><SellerSku>4928a374c28ff1</SellerSku><Quantity>4</Quantity></Product></Request>\n",
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Request><Product><SellerSku>4105382173aaee4</SellerSku><Price>12</Price></Product><Product><SellerSku>4928a374c28ff1</SellerSku><Quantity>4</Quantity></Product></Request>\n",
             ]
         ];
     }

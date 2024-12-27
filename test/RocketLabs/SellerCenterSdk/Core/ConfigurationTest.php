@@ -2,7 +2,9 @@
 
 namespace RocketLabs\SellerCenterSdk\Core;
 
-class ConfigurationTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ConfigurationTest extends TestCase
 {
     /**
      * @param string $url
@@ -26,7 +28,8 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstructorWithInvalidConfig($url, $user, $expectedMessage)
     {
-        $this->setExpectedException(\InvalidArgumentException::class, $expectedMessage);
+        $this->expectException(\InvalidArgumentException::class);
+		$this->expectExceptionMessage($expectedMessage);
 
         new Configuration($url, $user, 'anything');
     }
@@ -34,7 +37,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function providerConstructorWithValidConfig()
+    public static function providerConstructorWithValidConfig()
     {
         return [
             'valid data' => [
@@ -47,33 +50,33 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function providerConstructorWithInvalidConfig()
+    public static function providerConstructorWithInvalidConfig()
     {
         return [
             'invalid url (not an url)' => [
-                'url' => 'not-an-url',
-                'user' => 'api@someseller.de',
-                'message' => 'Provided url for Seller Center Api "not-an-url" is invalid'
+                'not-an-url',
+                'api@someseller.de',
+                'Provided url for Seller Center Api "not-an-url" is invalid'
             ],
             'invalid url (url without host)' => [
-                'url' => 'https:///api.php/',
-                'user' => 'api@someseller.de',
-                'message' => 'Provided url for Seller Center Api "https:///api.php/" is invalid'
+                'https:///api.php/',
+                'api@someseller.de',
+                'Provided url for Seller Center Api "https:///api.php/" is invalid'
             ],
             'invalid url (url without schema)' => [
-                'url' => '//api.sellercenter.someventure.de/',
-                'user' => 'api@someseller.de',
-                'message' => 'Provided url for Seller Center Api "//api.sellercenter.someventure.de/" is invalid'
+                '//api.sellercenter.someventure.de/',
+                'api@someseller.de',
+                'Provided url for Seller Center Api "//api.sellercenter.someventure.de/" is invalid'
             ],
             'invalid schema' => [
-                'url' => 'ftp://api.sellercenter.someventure.de',
-                'user' => 'api@someseller.de',
-                'message' => 'The scheme of provided url "ftp://api.sellercenter.someventure.de" is invalid, please use one of following schemas "http", "https"'
+                'ftp://api.sellercenter.someventure.de',
+                'api@someseller.de',
+                'The scheme of provided url "ftp://api.sellercenter.someventure.de" is invalid, please use one of following schemas "http", "https"'
             ],
             'invalid user' => [
-                'url' => 'https://api.sellercenter.someventure.de',
-                'user' => 'api.someseller.de',
-                'message' => 'Provided user for Seller Center Api "api.someseller.de" is invalid'
+                'https://api.sellercenter.someventure.de',
+                'api.someseller.de',
+                'Provided user for Seller Center Api "api.someseller.de" is invalid'
             ],
         ];
     }

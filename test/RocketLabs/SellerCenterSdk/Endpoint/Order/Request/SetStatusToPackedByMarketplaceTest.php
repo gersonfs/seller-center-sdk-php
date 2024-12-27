@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 
-class SetStatusToPackedByMarketplaceTest extends \PHPUnit_Framework_TestCase
+class SetStatusToPackedByMarketplaceTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testGetMethod()
@@ -31,14 +31,14 @@ class SetStatusToPackedByMarketplaceTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function providerToArray()
+    public static function providerToArray()
     {
         return [
             [
-                'ids' => [10, 11],
-                'delivery' => 'dropship',
-                'provider' => 'DHL',
-                'expected array' => [
+                [10, 11],
+                'dropship',
+                'DHL',
+                [
                     'Action' => 'SetStatusToPackedByMarketplace',
                     'Format' => 'JSON',
                     'Version' => '1.0',

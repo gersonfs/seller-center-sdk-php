@@ -9,7 +9,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\FeedIdResponse;
 /**
  * Class ImageTest
  */
-class ImageTest extends \PHPUnit_Framework_TestCase
+class ImageTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param string $sku
@@ -27,16 +27,16 @@ class ImageTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function providerGetBodyData()
+    public static function providerGetBodyData()
     {
         return [
             'few images' => [
-                'sku' => '123a',
-                'images' => [
+                '123a',
+                [
                     'http://images.com/imgs/img10121201.jpg',
                     'http://images.com/imgs/img10121212.jpg',
                 ],
-                'expected' => [
+                [
                     'ProductImage' => [
                         'SellerSku' => '123a',
                         'Images' => [
@@ -71,34 +71,36 @@ class ImageTest extends \PHPUnit_Framework_TestCase
     public function testConstructor(array $images, $exception)
     {
         if ($exception) {
-            $this->setExpectedException($exception);
-        }
+            $this->expectException($exception);
+        } else {
+			$this->assertTrue(true);
+		}
         new Image('sku', $images);
     }
 
     /**
      * @return array
      */
-    public function providerConstructor()
+    public static function providerConstructor()
     {
         return [
             'valid request with two image' => [
-                'images' => [
+                [
                     'http://valid.url/img.png',
                     'http://valid.url/img.jpg'
                 ],
-                'exception' => null,
+                null,
             ],
             'valid request with no images' => [
-                'images' => [],
-                'exception' => InvalidFieldValue::class,
+                [],
+                InvalidFieldValue::class,
             ],
             'request with invalid urls' => [
-                'images' => [
+                [
                     'ololo12',
                     'http://valid.url/img.png'
                 ],
-                'exception' => InvalidFieldValue::class,
+                InvalidFieldValue::class,
             ]
         ];
     }

@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Feed\Request\FeedList;
 /**
  * Class FeedTest
  */
-class FeedTest extends \PHPUnit_Framework_TestCase
+class FeedTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testFeedList()

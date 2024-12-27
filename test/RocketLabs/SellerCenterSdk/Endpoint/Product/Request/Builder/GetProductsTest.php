@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetProducts as GetProduc
 /**
  * Class GetProductsTest
  */
-class GetProductsTest extends \PHPUnit_Framework_TestCase
+class GetProductsTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -36,7 +36,7 @@ class GetProductsTest extends \PHPUnit_Framework_TestCase
     public function testIncorrectSetup()
     {
 
-        $this->setExpectedException(InvalidFieldEnumValue::class);
+        $this->expectException(InvalidFieldEnumValue::class);
 
         (new GetProducts)->setFilter('nope');
     }
@@ -44,16 +44,16 @@ class GetProductsTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function correctSetupProvider()
+    public static function correctSetupProvider()
     {
         return [
             'valid request of GetProducts' => [
-                'filters' => [
+                [
                     'filter' => 'all',
                     'globalIdentifier' => 1,
                     'search' => 'dummy'
                 ],
-                'expected' => [
+                [
                     'Filter' => 'all',
                     'GlobalIdentifier' => 1,
                     'Search' => 'dummy'

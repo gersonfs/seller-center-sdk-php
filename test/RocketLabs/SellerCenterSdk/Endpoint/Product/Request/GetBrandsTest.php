@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetBrands as Response;
 /**
  * Class GetBrandsTest
  */
-class GetBrandsTest extends \PHPUnit_Framework_TestCase
+class GetBrandsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param array $expected
@@ -35,11 +35,11 @@ class GetBrandsTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function toArrayDataProvider()
+    public static function toArrayDataProvider()
     {
         return [
             'single test' => [
-                'expected' => [
+                [
                     'Version' => '1.0',
                     'Action' => 'GetBrands',
                     'Format' => 'JSON',

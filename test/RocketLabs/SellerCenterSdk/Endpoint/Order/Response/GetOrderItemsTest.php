@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\ItemCollection;
 /**
  * Class GetOrderItemsTest
  */
-class GetOrderItemsTest extends \PHPUnit_Framework_TestCase
+class GetOrderItemsTest extends \PHPUnit\Framework\TestCase
 {
     public function testConstructEmpty()
     {
@@ -34,11 +34,11 @@ class GetOrderItemsTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data with 2+ items' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => [
                         'OrderItems' => [
@@ -111,7 +111,7 @@ class GetOrderItemsTest extends \PHPUnit_Framework_TestCase
                 ]
             ],
             'valid data with 1 item' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => [
                         'OrderItems' => [

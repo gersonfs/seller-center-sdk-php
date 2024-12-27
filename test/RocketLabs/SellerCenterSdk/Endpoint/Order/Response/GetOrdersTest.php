@@ -9,7 +9,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\OrderCollection;
 /**
  * Class GetOrdersTest
  */
-class GetOrdersTest extends \PHPUnit_Framework_TestCase
+class GetOrdersTest extends \PHPUnit\Framework\TestCase
 {
     public function testConstructEmpty()
     {
@@ -35,11 +35,11 @@ class GetOrdersTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data with 2+ orders' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => [
                         GetOrders::ORDERS_KEY => [
@@ -161,7 +161,7 @@ class GetOrdersTest extends \PHPUnit_Framework_TestCase
                 ]
             ],
             'valid data with 1 order' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => [
                         GetOrders::ORDERS_KEY => [

@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Response\GetDocument as Response;
 
-class GetDocumentTest extends \PHPUnit_Framework_TestCase
+class GetDocumentTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param array $expected
@@ -33,18 +33,18 @@ class GetDocumentTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function toArrayDataProvider()
+    public static function toArrayDataProvider()
     {
         return [
             'single test' => [
-                'expected' => [
+                [
                     'OrderItemIds' => '[1,2,3]',
                     'Version' => '1.0',
                     'Action' => 'GetDocument',
                     'Format' => 'JSON',
                     'DocumentType' => 'hello you !',
                 ],
-                'data' => [
+                [
                     'OrderItemIds' => [1,2,3],
                     'Version' => '1.0',
                     'Action' => 'GetDocument',

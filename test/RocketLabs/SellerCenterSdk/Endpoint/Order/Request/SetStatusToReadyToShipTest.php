@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 
-class SetStatusToReadyToShipTest extends \PHPUnit_Framework_TestCase
+class SetStatusToReadyToShipTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testGetMethod()
@@ -32,15 +32,15 @@ class SetStatusToReadyToShipTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function providerToArray()
+    public static function providerToArray()
     {
         return [
             [
-                'ids' => [10,11],
-                'delivery' => 'dropship',
-                'provider' => 'DHL',
-                'tracking' => 'D4263456346345',
-                'expected array' => [
+                [10,11],
+                'dropship',
+                'DHL',
+                'D4263456346345',
+                [
                     'Action' => 'SetStatusToReadyToShip',
                     'Format' => 'JSON',
                     'Version' => '1.0',

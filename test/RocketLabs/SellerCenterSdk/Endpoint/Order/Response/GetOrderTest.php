@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Response;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\Address;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\Order;
 
-class GetOrderTest extends \PHPUnit_Framework_TestCase
+class GetOrderTest extends \PHPUnit\Framework\TestCase
 {
     public function testConstructEmpty()
     {
@@ -31,11 +31,11 @@ class GetOrderTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function provider()
+    public static function provider()
     {
         return [
             'valid data with 1 order' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => [
                         GetOrders::ORDERS_KEY => [

@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Order\Response\GetOrder as GetOrderRespo
 /**
  * Class GetOrderTest
  */
-class GetOrderTest extends \PHPUnit_Framework_TestCase
+class GetOrderTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetMethod()
     {
@@ -34,12 +34,12 @@ class GetOrderTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function providerToArray()
+    public static function providerToArray()
     {
         return [
             [
-                'id' => 11,
-                'expectedArray' => [
+                11,
+                [
                     'Action' => 'GetOrder',
                     'Format' => 'JSON',
                     'Version' => '1.0',

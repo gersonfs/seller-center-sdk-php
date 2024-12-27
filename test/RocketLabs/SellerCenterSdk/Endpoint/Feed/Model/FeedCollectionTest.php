@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Feed\Model;
 /**
  * Class FeedCollectionTest
  */
-class FeedCollectionTest extends \PHPUnit_Framework_TestCase
+class FeedCollectionTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testClass()

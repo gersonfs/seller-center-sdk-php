@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\AttributeCollection;
 /**
  * Class GetCategoryAttributesTest
  */
-class GetCategoryAttributesTest extends \PHPUnit_Framework_TestCase
+class GetCategoryAttributesTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

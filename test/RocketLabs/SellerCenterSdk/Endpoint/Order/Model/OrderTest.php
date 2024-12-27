@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Model;
 
-class OrderTest extends \PHPUnit_Framework_TestCase
+class OrderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param array $data
@@ -44,11 +44,11 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             [
-                'data' => [
+                [
                     Order::ORDER_ID => 89,
                     Order::CUSTOMER_FIRST_NAME => 'John',
                     Order::CUSTOMER_LAST_NAME => 'Doe',
@@ -106,7 +106,7 @@ class OrderTest extends \PHPUnit_Framework_TestCase
                         ]
                     ],
                 ],
-                'expected' => [
+                [
                     Order::ORDER_ID => 89,
                     Order::CUSTOMER_FIRST_NAME => 'John',
                     Order::CUSTOMER_LAST_NAME => 'Doe',

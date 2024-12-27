@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Response\GetOrderItems as Response;
 
-class GetOrderItemsTest extends \PHPUnit_Framework_TestCase
+class GetOrderItemsTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testGetMethod()
@@ -31,17 +31,17 @@ class GetOrderItemsTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(Response::class, $request->getResponseClassName());
     }
 
-    public function toArrayDataProvider()
+    public static function toArrayDataProvider()
     {
         return [
             'single test' => [
-                'expected' => [
+                [
                     'OrderId' => '4',
                     'Version' => '1.0',
                     'Action' => 'GetOrderItems',
                     'Format' => 'JSON',
                 ],
-                'data' => [
+                [
                     'OrderId' => 4
                 ]
             ]

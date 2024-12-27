@@ -72,7 +72,7 @@ class Client
      *
      * @return Client
      */
-    public static function create(Configuration $configuration, HttpClientInterface $httpClient = null)
+    public static function create(Configuration $configuration, ?HttpClientInterface $httpClient = null)
     {
         return new static(
             $configuration,

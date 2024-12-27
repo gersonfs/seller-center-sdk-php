@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Core\Response;
 
-class ErrorResponseTest extends \PHPUnit_Framework_TestCase
+class ErrorResponseTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -22,36 +22,36 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function providerConstructor()
+    public static function providerConstructor()
     {
         return [
             'with body and message' => [
-                'data' => [
+                [
                     'Head' => ['ErrorMessage' => 'Error 01'],
                     'Body' => ['PostedData' => ['SomeData' => 1]]
                 ],
-                'message' => 'Error 01',
-                'details' => ['PostedData' => ['SomeData' => 1]],
+                'Error 01',
+                ['PostedData' => ['SomeData' => 1]],
             ],
             'with message' => [
-                'data' => [
+                [
                     'Head' => ['ErrorMessage' => 'Error 01']
                 ],
-                'message' => 'Error 01',
-                'details' => [],
+                'Error 01',
+                [],
             ],
             'with body' => [
-                'data' => [
+                [
                     'Head' => [],
                     'Body' => ['PostedData' => ['SomeData' => 1]]
                 ],
-                'message' => '',
-                'details' => ['PostedData' => ['SomeData' => 1]],
+                '',
+                ['PostedData' => ['SomeData' => 1]],
             ],
             'empty' => [
-                'data' => [],
-                'message' => '',
-                'details' => [],
+                [],
+                '',
+                [],
             ]
         ];
     }

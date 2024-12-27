@@ -8,11 +8,11 @@ use RocketLabs\SellerCenterSdk\Endpoint\Feed\Model\FeedCollection;
 /**
  * Class FeedListTest
  */
-class FeedListTest extends \PHPUnit_Framework_TestCase
+class FeedListTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
-     * @dataProvider testConstructorProvider
+     * @dataProvider constructorProvider
      *
      * @param array $feeds
      * @param array $expected
@@ -48,11 +48,11 @@ class FeedListTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function testConstructorProvider()
+    public static function constructorProvider()
     {
         return [
             'multiple feeds' => [
-                'feeds' => [
+                [
                     'Feed' => [
                         [
                             'Feed' => 'Hello world !'
@@ -62,7 +62,7 @@ class FeedListTest extends \PHPUnit_Framework_TestCase
                         ]
                     ]
                 ],
-                'expected' => [
+                [
                     'count' => 2,
                     'feeds' => [
                         new Feed(
@@ -79,12 +79,12 @@ class FeedListTest extends \PHPUnit_Framework_TestCase
                 ]
             ],
             'single feed' => [
-                'feeds' => [
+                [
                     'Feed' => [
                         'Feed' => 'Hello world !'
                     ]
                 ],
-                'expected' => [
+                [
                     'count' => 1,
                     'feeds' => [
                         new Feed(

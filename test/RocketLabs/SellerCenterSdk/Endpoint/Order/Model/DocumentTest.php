@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Model;
 
-class DocumentTest extends \PHPUnit_Framework_TestCase
+class DocumentTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param array $data
@@ -26,11 +26,11 @@ class DocumentTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function constructProvider()
+    public static function constructProvider()
     {
         return [
             [
-                'data' => [
+                [
                     Document::DOCUMENT_TYPE_KEY => 'parcel',
                     Document::MIME_TYPE_KEY => 'text/html',
                     Document::FILE_KEY => 'YTM0NZomIzI2OTsmIzM0NTueYQ==',

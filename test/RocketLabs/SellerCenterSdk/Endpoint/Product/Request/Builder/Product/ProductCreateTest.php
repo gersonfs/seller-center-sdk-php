@@ -9,7 +9,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductC
 /**
  * Class ProductCreateTest
  */
-class ProductCreateTest extends \PHPUnit_Framework_TestCase
+class ProductCreateTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -30,14 +30,14 @@ class ProductCreateTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function buildProvider()
+    public static function buildProvider()
     {
 
         $now = new \DateTimeImmutable('now');
 
         return [
             'with a product' => [
-                'product' => [
+                [
                     Product::SELLER_SKU => '41053821e4',
                     Product::NAME => 'New Product',
                     Product::BRAND => 'A Little 7',
@@ -56,7 +56,7 @@ class ProductCreateTest extends \PHPUnit_Framework_TestCase
                         'PackageType' => 'Parcel'
                     ]
                 ],
-                'request' => new ProductCreateRequest(
+                new ProductCreateRequest(
                     [
                         Product::SELLER_SKU => '41053821e4',
                         Product::NAME => 'New Product',

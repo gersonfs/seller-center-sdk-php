@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 
-class SetStatusToCanceledTest extends \PHPUnit_Framework_TestCase
+class SetStatusToCanceledTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testGetMethod()
@@ -25,14 +25,14 @@ class SetStatusToCanceledTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedArray, (new SetStatusToCanceled($id, $reason, $reasonDetail))->toArray());
     }
 
-    public function providerToArray()
+    public static function providerToArray()
     {
         return [
             [
-                'id' => 10,
-                'reason' => 'reason',
-                'details' => 'reason details',
-                'expected array' => [
+                10,
+                'reason',
+                'reason details',
+                [
                     'Action' => 'SetStatusToCanceled',
                     'Format' => 'JSON',
                     'Version' => '1.0',

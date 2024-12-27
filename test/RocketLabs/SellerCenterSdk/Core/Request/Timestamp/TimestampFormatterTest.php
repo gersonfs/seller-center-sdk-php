@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Core\Request\Timestamp;
 
-class TimestampFormatterTest extends \PHPUnit_Framework_TestCase
+class TimestampFormatterTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -29,12 +29,12 @@ class TimestampFormatterTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function providerGetFormattedTimestamp()
+    public static function providerGetFormattedTimestamp()
     {
         return [
             'now' => [
-                'time' => date_create_from_format(\DateTime::ISO8601, '2016-03-16T11:52:08+0100'),
-                'result' => '2016-03-16T11:52:08+0100'
+                date_create_from_format(\DateTime::ISO8601, '2016-03-16T11:52:08+0100'),
+                '2016-03-16T11:52:08+0100'
             ]
         ];
     }

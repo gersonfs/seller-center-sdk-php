@@ -12,5 +12,5 @@ interface TimestampFormatterInterface
      * @param \DateTimeInterface|null $time
      * @return string
      */
-    public function getFormattedTimestamp(\DateTimeInterface $time = null);
+    public function getFormattedTimestamp(?\DateTimeInterface $time = null);
 }
