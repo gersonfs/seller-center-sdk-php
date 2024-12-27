@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Response;
 /**
  * Class FeedIdResponseTest
  */
-class FeedIdResponseTest extends \PHPUnit_Framework_TestCase
+class FeedIdResponseTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

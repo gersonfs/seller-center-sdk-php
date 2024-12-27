@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\ProductCollection;
 /**
  * Class GetProductsTest
  */
-class GetProductsTest extends \PHPUnit_Framework_TestCase
+class GetProductsTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

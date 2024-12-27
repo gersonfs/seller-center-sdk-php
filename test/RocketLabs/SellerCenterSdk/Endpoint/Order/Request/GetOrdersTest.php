@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Response\GetOrders as GetOrdersResponse;
 
-class GetOrdersTest extends \PHPUnit_Framework_TestCase
+class GetOrdersTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetMethod()
     {

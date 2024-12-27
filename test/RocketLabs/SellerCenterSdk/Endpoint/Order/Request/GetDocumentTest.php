@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Response\GetDocument as Response;
 
-class GetDocumentTest extends \PHPUnit_Framework_TestCase
+class GetDocumentTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param array $expected

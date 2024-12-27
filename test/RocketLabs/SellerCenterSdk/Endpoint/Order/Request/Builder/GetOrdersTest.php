@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Core\Exception\InvalidSortingDirection;
 use RocketLabs\SellerCenterSdk\Core\Exception\InvalidSortingField;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\GetOrders as GetOrdersRequest;
 
-class GetOrdersTest extends \PHPUnit_Framework_TestCase
+class GetOrdersTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider providerBuild

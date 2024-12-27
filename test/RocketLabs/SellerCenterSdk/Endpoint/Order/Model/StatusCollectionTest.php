@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Model;
 
-class StatusCollectionTest extends \PHPUnit_Framework_TestCase
+class StatusCollectionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider provider

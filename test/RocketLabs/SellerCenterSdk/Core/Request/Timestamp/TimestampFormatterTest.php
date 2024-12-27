@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Core\Request\Timestamp;
 
-class TimestampFormatterTest extends \PHPUnit_Framework_TestCase
+class TimestampFormatterTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

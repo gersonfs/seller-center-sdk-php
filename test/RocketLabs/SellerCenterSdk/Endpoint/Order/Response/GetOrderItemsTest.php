@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\ItemCollection;
 /**
  * Class GetOrderItemsTest
  */
-class GetOrderItemsTest extends \PHPUnit_Framework_TestCase
+class GetOrderItemsTest extends \PHPUnit\Framework\TestCase
 {
     public function testConstructEmpty()
     {

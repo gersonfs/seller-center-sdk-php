@@ -9,7 +9,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\FeedIdResponse;
 /**
  * Class ImageTest
  */
-class ImageTest extends \PHPUnit_Framework_TestCase
+class ImageTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param string $sku

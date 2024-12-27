@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Core\Response;
 
-class AbstractResponseTest extends \PHPUnit_Framework_TestCase
+class AbstractResponseTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

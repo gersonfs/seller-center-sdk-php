@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\CategoryCollection;
 /**
  * Class GetCategoryTreeTest
  */
-class GetCategoryTreeTest extends \PHPUnit_Framework_TestCase
+class GetCategoryTreeTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

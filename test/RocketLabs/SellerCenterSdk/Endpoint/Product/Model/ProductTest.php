@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 /**
  * Class ProductTest
  */
-class ProductTest extends \PHPUnit_Framework_TestCase
+class ProductTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

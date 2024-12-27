@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\BrandCollection;
 /**
  * Class GetBrandsTest
  */
-class GetBrandsTest extends \PHPUnit_Framework_TestCase
+class GetBrandsTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

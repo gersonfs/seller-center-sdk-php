@@ -13,7 +13,7 @@ use RocketLabs\SellerCenterSdk\Core\Request\Signature\RequestSignatureProviderIn
 use RocketLabs\SellerCenterSdk\Core\Request\Timestamp\TimestampFormatterInterface;
 use RocketLabs\SellerCenterSdk\Core\Response\Factory;
 
-class ClientTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends \PHPUnit\Framework\TestCase
 {
     const URL = 'https://sc.api/';
     const USER = 'api@user.de';

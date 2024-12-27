@@ -2,7 +2,9 @@
 
 namespace RocketLabs\SellerCenterSdk\Core;
 
-class ConfigurationTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ConfigurationTest extends TestCase
 {
     /**
      * @param string $url

@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Core\Request\OutputFormatAdapter;
 /**
  * Class XmlOutputFormatAdapterTest
  */
-final class XmlOutputFormatAdapterTest extends \PHPUnit_Framework_TestCase
+final class XmlOutputFormatAdapterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

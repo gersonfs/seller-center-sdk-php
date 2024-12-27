@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint;
 /**
  * Class EndpointsTest
  */
-class EndpointsTest extends \PHPUnit_Framework_TestCase
+class EndpointsTest extends \PHPUnit\Framework\TestCase
 {
     public function testOrder()
     {

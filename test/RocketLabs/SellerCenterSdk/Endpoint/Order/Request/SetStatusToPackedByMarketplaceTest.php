@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 
-class SetStatusToPackedByMarketplaceTest extends \PHPUnit_Framework_TestCase
+class SetStatusToPackedByMarketplaceTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testGetMethod()

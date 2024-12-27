@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Response;
 
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\Document;
 
-class GetDocumentTest extends \PHPUnit_Framework_TestCase
+class GetDocumentTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testConstructEmpty()

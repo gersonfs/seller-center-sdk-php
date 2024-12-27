@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Core\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 
-class GenericRequestTest extends \PHPUnit_Framework_TestCase
+class GenericRequestTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param GenericRequest $request

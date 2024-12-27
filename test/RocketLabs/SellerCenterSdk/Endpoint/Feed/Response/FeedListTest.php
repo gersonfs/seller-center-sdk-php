@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Feed\Model\FeedCollection;
 /**
  * Class FeedListTest
  */
-class FeedListTest extends \PHPUnit_Framework_TestCase
+class FeedListTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Core\Response;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
 
-class FactoryTest extends \PHPUnit_Framework_TestCase
+class FactoryTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @param HttpResponseInterface $httpResponse

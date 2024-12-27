@@ -10,7 +10,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetProducts as GetProdu
 /**
  * Class GetProductsTest
  */
-class GetProductsTest extends \PHPUnit_Framework_TestCase
+class GetProductsTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testGetResponseClassName()

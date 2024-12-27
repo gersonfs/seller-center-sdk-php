@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 /**
  * Class BrandCollectionTest
  */
-class BrandCollectionTest extends \PHPUnit_Framework_TestCase
+class BrandCollectionTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider provider

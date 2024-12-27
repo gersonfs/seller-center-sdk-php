@@ -9,7 +9,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductC
 /**
  * Class ProductCreateTest
  */
-class ProductCreateTest extends \PHPUnit_Framework_TestCase
+class ProductCreateTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetProducts as GetProduc
 /**
  * Class GetProductsTest
  */
-class GetProductsTest extends \PHPUnit_Framework_TestCase
+class GetProductsTest extends \PHPUnit\Framework\TestCase
 {
 
     /**

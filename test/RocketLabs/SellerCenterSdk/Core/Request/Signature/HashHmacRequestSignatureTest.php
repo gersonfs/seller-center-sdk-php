@@ -2,7 +2,9 @@
 
 namespace RocketLabs\SellerCenterSdk\Core\Request\Signature;
 
-class HashHmacRequestSignatureTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class HashHmacRequestSignatureTest extends TestCase
 {
     /**
      * @param $algorithm

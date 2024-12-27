@@ -4,7 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 
-class SetStatusToCanceledTest extends \PHPUnit_Framework_TestCase
+class SetStatusToCanceledTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testGetMethod()

@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 /**
  * Class CategoryCollectionTest
  */
-class CategoryCollectionTest extends \PHPUnit_Framework_TestCase
+class CategoryCollectionTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testClass()

@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Image as ImageRequest;
 /**
  * Class ImageTest
  */
-class ImageTest extends \PHPUnit_Framework_TestCase
+class ImageTest extends \PHPUnit\Framework\TestCase
 {
     const SKU = 'SellerSKU';
 

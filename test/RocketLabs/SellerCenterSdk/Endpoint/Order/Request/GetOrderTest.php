@@ -8,7 +8,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Order\Response\GetOrder as GetOrderRespo
 /**
  * Class GetOrderTest
  */
-class GetOrderTest extends \PHPUnit_Framework_TestCase
+class GetOrderTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetMethod()
     {
